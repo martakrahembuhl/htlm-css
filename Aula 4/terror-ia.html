@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Cinema - Portal do Terror</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Chiller&family=Butcherman&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            cursor: crosshair;
+        }
+
+        /* Efeitos de neblina e sombras */
+        .fog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><filter id="fog"><feTurbulence baseFrequency="0.01"/><feColorMatrix values="0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0.3 0"/></filter></defs><rect width="100%" height="100%" filter="url(%23fog)"/></svg>');
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.6;
+            animation: drift 20s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+        }
+
+        .blood-drip {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #8B0000, #FF0000);
+            animation: drip 3s ease-in infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes drip {
+            0% { height: 0; top: 0; }
+            50% { height: 50px; }
+            100% { height: 100px; top: 100vh; opacity: 0; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #8B0000;
+            box-shadow: 0 5px 20px rgba(139, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Butcherman', cursive;
+            font-size: 2.5rem;
+            color: #8B0000;
+            text-decoration: none;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #FF0000;
+            text-shadow: 0 0 20px #FF0000;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #8B0000;
+            background: rgba(139, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .hero {
+            text-align: center;
+            color: white;
+            margin-bottom: 8rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+            50% { transform: translateX(-50%) scale(1.2); opacity: 0.6; }
+        }
+
+        .hero h1 {
+            font-family: 'Butcherman', cursive;
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            color: #8B0000;
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8B0000, transparent);
+            animation: expand-line 2s ease-out 1s forwards;
+        }
+
+        @keyframes expand-line {
+            to { width: 100%; }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.3s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8B0000, #FF0000);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #8B0000;
+            animation: fadeInUp 1s ease 0.6s both;
+            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 0, 0, 0.6);
+            background: linear-gradient(135deg, #FF0000, #8B0000);
+        }
+
+        .btn-secondary {
+            background: rgba(0, 0, 0, 0.7);
+            color: #e0e0e0;
+            padding: 18px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #333;
+            animation: fadeInUp 1s ease 0.8s both;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(139, 0, 0, 0.2);
+            border-color: #8B0000;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Cards Section */
+        .cards-section {
+            margin: 8rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Butcherman', cursive;
+            color: #8B0000;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: rgba(224, 224, 224, 0.7);
+            font-size: 1.2rem;
+            margin-bottom: 5rem;
+            font-style: italic;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            border-color: #8B0000;
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.3);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #8B0000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .card h3 {
+            color: #e0e0e0;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: rgba(224, 224, 224, 0.8);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Seção de filmes em destaque */
+        .featured-movies {
+            margin: 8rem 0;
+            background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+            padding: 4rem 0;
+            border-radius: 20px;
+            border: 1px solid #333;
+        }
+
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .movie-card {
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            border-color: #8B0000;
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.4);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #1a1a1a, #333);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #8B0000;
+        }
+
+        .movie-info {
+            padding: 1.5rem;
+        }
+
+        .movie-info h4 {
+            color: #e0e0e0;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .movie-info p {
+            color: rgba(224, 224, 224, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .movie-rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(139, 0, 0, 0.9);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(145deg, #000, #0d0d0d);
+            color: #e0e0e0;
+            text-align: center;
+            padding: 4rem 0 2rem;
+            margin-top: 8rem;
+            border-top: 2px solid #8B0000;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: #8B0000;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-family: 'Butcherman', cursive;
+            font-size: 1.2rem;
+        }
+
+        .footer-section a {
+            color: rgba(224, 224, 224, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #8B0000;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            color: rgba(224, 224, 224, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .cards-grid, .movies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Efeitos de neblina -->
+    <div class="fog"></div>
+    
+    <!-- Gotas de sangue -->
+    <div class="blood-drip" style="left: 15%; animation-delay: 0s;"></div>
+    <div class="blood-drip" style="left: 35%; animation-delay: 2s;"></div>
+    <div class="blood-drip" style="left: 65%; animation-delay: 4s;"></div>
+    <div class="blood-drip" style="left: 85%; animation-delay: 1s;"></div>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Dark Cinema</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#filmes">Filmes</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero" id="inicio">
+            <h1>Dark Cinema</h1>
+            <p>Mergulhe nas profundezas do terror cinematográfico. Descubra clássicos assombrados, novos pesadelos e experiências que vão acelerar seu coração.</p>
+            <div class="cta-buttons">
+                <a href="#filmes" class="btn-primary">Explorar Terror</a>
+                <a href="#servicos" class="btn-secondary">Saiba Mais</a>
+            </div>
+        </section>
+
+        <section class="cards-section" id="servicos">
+            <h2 class="section-title">Experiências Sombrias</h2>
+            <p class="section-subtitle">Serviços que vão além do óbvio no mundo do terror</p>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🎬</div>
+                    <h3>Catálogo Assombrado</h3>
+                    <p>Milhares de filmes de terror organizados por década, subgênero e nível de intensidade. Do terror psicológico aos slashers mais brutais.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎭</div>
+                    <h3>Análises Profundas</h3>
+                    <p>Reviews detalhadas, teorias ocultas e análises psicológicas dos filmes que marcaram gerações e criaram traumas duradouros.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎪</div>
+                    <h3>Eventos Especiais</h3>
+                    <p>Maratonas de terror, sessões de meia-noite, encontros temáticos e exibições exclusivas em atmosferas imersivas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Recomendações IA</h3>
+                    <p>Sistema inteligente que analisa seus medos e preferências para sugerir o próximo filme que vai tirar seu sono.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎮</div>
+                    <h3>Experiências Interativas</h3>
+                    <p>Escape rooms virtuais, jogos baseados em filmes clássicos e experiências imersivas que borram a linha entre ficção e realidade.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Making Of Sombrio</h3>
+                    <p>Bastidores dos filmes mais perturbadores, entrevistas exclusivas com diretores e atores, e os segredos por trás dos efeitos mais aterrorizantes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-movies" id="filmes">
+            <div class="container">
+                <h2 class="section-title">Destaques Macabros</h2>
+                <p class="section-subtitle">Os filmes que estão aterrorizando o público neste momento</p>
+                <div class="movies-grid">
+                    <div class="movie-card">
+                        <div class="movie-poster">👻</div>
+                        <div class="movie-rating">8.1</div>
+                        <div class="movie-info">
+                            <h4>Invocação do Mal</h4>
+                            <p>Ed e Lorraine Warren investigam atividades paranormais aterrorizantes em uma casa de fazenda. Baseado em eventos reais que marcaram a história do terror.</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🔪</div>
+                        <div class="movie-rating">7.4</div>
+                        <div class="movie-info">
+                            <h4>Pânico (Scream)</h4>
+                            <p>Um assassino mascarado conhecido como Ghostface aterroriza a cidade de Woodsboro. O slasher que revolucionou o gênero nos anos 90.</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🪆</div>
+                        <div class="movie-rating">6.5</div>
+                        <div class="movie-info">
+                            <h4>Annabelle</h4>
+                            <p>A assombrada boneca Annabelle desperta o mal dentro de si. Uma prequela aterrorizante do universo de Invocação do Mal.</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">⛪</div>
+                        <div class="movie-rating">5.3</div>
+                        <div class="movie-info">
+                            <h4>A Freira</h4>
+                            <p>Um padre e uma noviça investigam o suicídio de uma freira em uma abadia romena. O mal ancestral da entidade demoníaca Valak.</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">📹</div>
+                        <div class="movie-rating">6.3</div>
+                        <div class="movie-info">
+                            <h4>Atividade Paranormal</h4>
+                            <p>Câmeras de segurança capturam eventos sobrenaturais perturbadores em uma casa suburbana. Terror found footage que redefiniu o gênero.</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🎈</div>
+                        <div class="movie-rating">7.3</div>
+                        <div class="movie-info">
+                            <h4>IT - A Coisa</h4>
+                            <p>Um palhaço demoníaco aterroriza crianças na cidade de Derry. Adaptação moderna do clássico romance de Stephen King.</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🏚️</div>
+                        <div class="movie-rating">8.5</div>
+                        <div class="movie-info">
+                            <h4>Hereditário</h4>
+                            <p>Uma família é assombrada por tragédias após a morte da matriarca. Terror psicológico perturbador que vai além dos sustos tradicionais.</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">👹</div>
+                        <div class="movie-rating">6.8</div>
+                        <div class="movie-info">
+                            <h4>Sobrenatural</h4>
+                            <p>Uma família se muda para uma casa assombrada onde seu filho entra em coma e fica preso em uma dimensão demoníaca chamada "Além".</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🌕</div>
+                        <div class="movie-rating">6.4</div>
+                        <div class="movie-info">
+                            <h4>Lua Negra</h4>
+                            <p>Eventos sobrenaturais começam a acontecer quando uma família se muda para uma fazenda isolada. Terror atmosférico e claustrofóbico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contato Sombrio</h4>
+                    <a href="mailto:terror@darkcinema.com">terror@darkcinema.com</a>
+                    <a href="tel:+5511666666666">(11) 666-6666</a>
+                    <a href="#">São Paulo - SP</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes do Além</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">Discord</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Categorias</h4>
+                    <a href="#">Terror Clássico</a>
+                    <a href="#">Slashers</a>
+                    <a href="#">Sobrenatural</a>
+                    <a href="#">Terror Psicológico</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <a href="#">Blog Macabro</a>
+                    <a href="#">Podcast</a>
+                    <a href="#">Newsletter</a>
+                    <a href="#">Eventos</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dark Cinema. Onde os pesadelos ganham vida.</p>
+                <p style="margin-top: 0.5rem; opacity: 0.6;">⚠️ Conteúdo apenas para maiores de 18 anos</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Efeito no header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.98)';
+                header.style.boxShadow = '0 5px 25px rgba(139, 0, 0, 0.7)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(139, 0, 0, 0.5)';
+            }
+        });
+
+        // Efeito de cursor assombrado
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() < 0.005) {
+                createGhost(e.clientX, e.clientY);
+            }
+        });
+
+        function createGhost(x, y) {
+            const ghost = document.createElement('div');
+            ghost.innerHTML = '👻';
+            ghost.style.position = 'fixed';
+            ghost.style.left = x + 'px';
+            ghost.style.top = y + 'px';
+            ghost.style.fontSize = '20px';
+            ghost.style.pointerEvents = 'none';
+            ghost.style.zIndex = '999';
+            ghost.style.opacity = '0.7';
+            ghost.style.animation = 'fadeOut 2s ease-out forwards';
+            
+            document.body.appendChild(ghost);
+            
+            setTimeout(() => {
+                if (ghost.parentNode) {
+                    ghost.parentNode.removeChild(ghost);
+                }
+            }, 2000);
+        }
+
+        // CSS para animação do fantasma
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                0% { opacity: 0.7; transform: translateY(0); }
+                100% { opacity: 0; transform: translateY(-50px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Efeito de tremulação nos cards
+        document.querySelectorAll('.movie-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                if (Math.random() < 0.3) {
+                    card.style.animation = 'flicker 0.5s ease-in-out';
+                    setTimeout(() => {
+                        card.style.animation = '';
+                    }, 500);
+                }
+            });
+        });
+
+        // Som de susto (simulado com vibração se disponível)
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                if (navigator.vibrate) {
+                    navigator.vibrate(100);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
