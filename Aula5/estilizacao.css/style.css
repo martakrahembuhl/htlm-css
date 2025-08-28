@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+.bloco1{
+    border: 5px solid;
+   border-color: rgb(0, 0, 0);
+   background-color: rgb(227, 218, 104);
+   border-radius: 8px;
+   margin: 20PX;
+   padding: 20px;
+}
+
+.bloco2{
+    border: 5px solid;
+    border-color: rgb(224, 233, 57);
+    background-color: rgb(121, 165, 209);
+    border-radius: 8px;
+    margin: 20PX;
+   padding: 20px;
+}
+.bloco3{
+    border: 5px solid;
+    border-color: rgb(51, 109, 255);
+    background-color: rgb(121, 164, 189);
+    border-radius: 8px;
+    margin: 20PX;
+   padding: 20px;
+
+}
+.bloco4{
+    border: 5px solid;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin: 20PX;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+}

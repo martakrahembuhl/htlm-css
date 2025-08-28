@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Escpola</title>
+    <link rel="stylesheet" href="/Aula5/Projetos/style.css">
+</head>
+<body>
+    <h1>🏫 Sistema de Cadastro Escolar</h1>
+     <p>Bem-vindos ao sistema de cadastros da nossa escola virtual!</p>
+    <h2>📋 Menu de Cadastros</h2> 
+    <a href="/Aula5/Projetos/Aluno.html"><button>👨🏽‍🎓 Cadastrar Aluno</button></a>
+    <a href="/Aula5/Projetos/professor.html"><button>👨🏽‍🏫 Cadastrar Professor</button></a>
+    <a href="/Aula5/Projetos/cursos.html"><button>📚 Cadastrar Curso</button></a>
+    <a href="/Aula5/Projetos/livro.html"><button>📖 Cadastrar livro</button></a>
+
+
+    <div class="container">
+
+        <div class="formulario">
+            <h2>👩🏻‍🎓Cadastro de aluno</h2>
+            <label for="nome">Nome Completo:</label><br>
+            <input type="text" name="Nome"><br><br>
+
+            <label for="data">Data de nascimento</label><br>
+            <input type="date" name="data" id=""><br><br>
+
+            <label for="email">Email: </label><br>
+            <input type="text" name="Email"><br><br>
+
+            <label for="telefone">Telefone:</label><br>
+            <input type="tel" name="telefone"><br><br>
+
+            <label for="serie/ano"> Série/Ano: </label><br>
+            <select name="serie" id="serie">
+                <option value="">Selecione</option>
+                <option value="1º ano - Fundamental 1">1º ano - Fundamental 1</option>
+                <option value="2º ano - Fundamental 1">2º ano - Fundamental 1</option>
+                <option value="3º ano - Fundamental 1">3º ano - Fundamental 1</option>
+                <option value="4º ano - Fundamental 1">4º ano - Fundamental 1</option>
+                <option value="5º ano - Fundamental 1">5º ano - Fundamental 1</option>
+                <option value="6º ano - Fundamental 2">6º ano - Fundamental 2</option>
+                <option value="7º ano - Fundamental 2">7º ano - Fundamental 2</option>
+                <option value="8º ano - Fundamental 2">8º ano - Fundamental 2</option>
+                <option value="9º ano - Fundamental 2">9º ano - Fundamental 2</option>
+                <option value="1º ano - Ensino médio">1º ano - Ensino médio</option>
+                <option value="2º ano - Ensino médio">2º ano - Ensino médio</option>
+                <option value="3º ano - Ensino médio">3º ano - Ensino médio</option>
+            </select> <br><br>
+
+            <label for="period">Periodo: </label> <br>
+            <input type="radio" name="Manhã" > Manhã<br>
+            <input type="radio" name="Tarde"> Tarde <br>
+            <input type="radio" name="noite" > Noite <br><br>
+
+            <label for="atv">Atividades Extras: </label> <br>
+            <input type="checkbox" name="Esporte"> Esportes <br>
+            <input type="checkbox" name="Música"> Música <br>
+            <input type="checkbox" name="Teatro"> Teatro <br>
+            <input type="checkbox" name="Informatica"> Informatica <br><br>
+
+            <label for="obs">Observações: </label><br>
+            <textarea name="Observações" ></textarea><br><br>
+
+            <button>Cadastrar Aluno</button>
+            <button>Limpar dados</button>            
+            
+        </div>
+
+    </div>
+
+</body>
+</html>
