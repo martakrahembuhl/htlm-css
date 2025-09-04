@@ -1,0 +1,108 @@
+p {
+  color: blue;
+}
+
+#titulo-principal {
+  background-color: yellow;
+}
+
+.subtitulo {
+  color: green;
+}
+
+li {
+  color: red;
+}
+
+#caixa1 {
+  background-color: lightblue;
+}
+#caixa2 {
+  background-color: lightcoral;
+}
+
+p, h2, h3 {
+  color: purple;
+}
+
+#texto-centralizado {
+  text-align: center;
+}
+
+#link-google {
+  color: orange;
+}
+#link-youtube {
+  color: red;
+}
+
+
+.negrito {
+  font-weight: bold;
+}
+
+img {
+  border: 2px solid black;
+  width: 200px; 
+  height: 150px; 
+}
+
+div p {
+  color: brown;
+}
+
+.p1 {
+  color: teal;
+}
+.p2 {
+  color: pink;
+}
+
+
+#fonte-arial {
+  font-family: Arial, sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  text-decoration: underline;
+}
+
+div h3 {
+  color: blueviolet;
+}
+
+
+#box1 {
+  background-color: red;
+}
+#box2 {
+  background-color: green;
+}
+#box3 {
+  background-color: blue;
+  color: white;
+}
+
+.destaque {
+  color: darkorange;
+}
+
+#caixa-colorida {
+  background-color: lightgreen;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.sublink {
+  text-decoration: underline;
+}
+
+h1, p, a {
+  color: darkslategray;
+}
