@@ -1,0 +1,151 @@
+.t1{
+    border: solid black;
+}
+
+.t2{
+    border: solid black;
+}
+.t2 th{
+    background-color: gray;
+  
+}
+
+.t3 td{
+    color: blue;    
+}
+.t3{
+    border: solid black ;
+}
+
+.t4{
+    border: solid black;
+    font-family: Arial;
+    padding-right: 20px;
+}
+.t4 td{
+    padding-right:20px ;
+}
+
+.t5 th{
+font-size: 25px;
+padding-right: 30px;
+}
+.t5{
+    border: solid black;
+}
+.t5 td{
+    padding-right: 20px ;
+}
+
+.t6{
+    border: solid black;
+}
+.t6 td{
+background-color: bisque;
+}
+
+.t7{
+    border: solid black;
+}
+.t7 td{
+    text-align: center;
+}
+
+.t8{
+    border: solid black 10px;
+   
+}
+    
+.t8 td{
+    padding-right: 30px;
+}
+
+.t9 th{
+    background-color: red;
+    border: solid black;
+}
+ .t9{
+    border: solid black;
+ }
+.t10 {
+    border: solid black;
+}
+.t10 td {
+    padding: 10px;
+}
+
+.t11 {
+    border: solid black;
+}
+.t11 td {
+    font-style: italic;
+}
+
+.t12{
+    border: solid black;
+}         
+.t12 th{
+   font-weight: bold;
+}
+.t13 {
+    border: solid black;
+}
+.t13 tr:first-child {
+    background-color: lightblue;
+}
+
+.t14 {
+    border: solid black;
+}
+.t14 td {
+    color: green;
+}
+
+.t15 {
+    border: solid black;
+    font-family: Verdana;
+    font-size: 18px;
+}
+
+.t16 {
+    border: solid black;
+}
+.t16 tr:nth-child(2) {
+    background-color: lightyellow;
+}
+
+.t17 {
+    border: solid black;
+}
+.t17 th {
+    background-color: black;
+    color: white;
+}
+
+.t18 {
+    border: solid black;
+}
+.t18 td {
+    text-transform: uppercase;
+}
+
+.t19 {
+    border: solid black;
+}
+.t19 th {
+    font-family: Georgia;
+}
+
+.t20 {
+    border: solid black;
+}
+.t20 th {
+    font-size: 20px;
+    color: white;
+    background-color: purple;
+}
+.t20 td {
+    color: darkblue;
+    background-color: lavender;
+}
+
