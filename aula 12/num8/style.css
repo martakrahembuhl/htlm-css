@@ -1,0 +1,127 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #e0e0e0;
+}
+
+.logo h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1em;
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex; /* Habilita o layout de coluna + barra lateral */
+    gap: 30px;
+}
+
+.content {
+    flex: 3; /* Ocupa 70% da largura */
+}
+
+.sidebar {
+    flex: 1; /* Ocupa 30% da largura */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.sidebar a {
+    color: #333;
+}
+
+article {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+article header h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.meta {
+    font-size: 0.9em;
+    color: #777;
+    margin: -10px 0 20px 0;
+}
+
+article section h3 {
+    color: #666;
+}
+
+article footer {
+    background: none;
+    padding: 0;
+    margin-top: 15px;
+    border-top: 1px dashed #ccc;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+article footer p {
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: #bbb;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}

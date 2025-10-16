@@ -1,0 +1,98 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 30px 0 0 0;
+    text-align: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.slogan {
+    margin: 5px 0 20px 0;
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+nav {
+    background-color: #444444;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main h2, main h3 {
+    color: #444444;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+section, article {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: #444444;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}

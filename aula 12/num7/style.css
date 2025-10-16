@@ -1,0 +1,55 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+article {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+article header h2 {
+    color: #333;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+.data-publicacao {
+    font-size: 0.9em;
+    color: #777;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 25px;
+}
+
+section h3 {
+    color: #555;
+    border-left: 5px solid #ccc;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+section p {
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #ddd;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.85em;
+    color: #555;
+}
