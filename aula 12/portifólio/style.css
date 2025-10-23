@@ -6,11 +6,16 @@
 }
 
 :root {
-    --cor-principal: #D4C5B9;
-    --cor-secundaria: #8B7355;
-    --cor-texto: #3E3E3E;
-    --cor-clara: #F5F1ED;
-    --cor-destaque: #7A9B76;
+    /* NOVA PALETA DE VERDE OLIVA (Mais Rica e Coesa) */
+    
+    --cor-principal: #b1bc9a; 
+    --cor-secundaria: #6D7959; 
+    
+    /* Cor do Texto: Aumentado o Contraste para melhorar a leitura */
+    --cor-texto: #2f3429; 
+    
+    --cor-clara: #F4F6F1; 
+    --cor-destaque: #6D7959; 
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -134,7 +139,7 @@ body {
 }
 
 .section-alt {
-    background-color: #ffffff;
+    background-color: var(--cor-principal); 
 }
 
 .section-title {
@@ -245,8 +250,8 @@ body {
 }
 
 .timeline-item {
-    padding: 1.5rem;
     background-color: var(--cor-clara);
+    padding: 1.5rem;
     border-left: 3px solid var(--cor-destaque);
     margin-bottom: 2rem;
     border-radius: 5px;
@@ -474,4 +479,32 @@ body {
     .hero-content {
         gap: 1.5rem;
     }
+}
+
+/*Estilo do Botão de Certificado */
+.btn-certificado {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    
+    /* Cores Vintage: Fundo Verde Oliva e Texto Branco */
+    background-color: var(--cor-destaque); 
+    color: white; 
+    
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-certificado:hover {
+    /* Efeito ao passar o mouse: Marrom Suave */
+    background-color: var(--cor-secundaria);
+    transform: translateY(-2px); /* Efeito de elevação sutil */
+}
+
+.btn-certificado i {
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
 }
