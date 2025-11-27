@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundação Caminhos da Solidariedade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Fundação Caminhos da Solidariedade</h1>
+            <p class="slogan">Transformando vidas através da solidariedade e do amor ao próximo</p>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#doe">Doe Agora</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="quem-somos">
+            <h2>Quem Somos</h2>
+            <p>A Fundação Caminhos da Solidariedade é uma organização sem fins lucrativos dedicada a apoiar famílias em situação de vulnerabilidade social. Desde 2015, desenvolvemos ações humanitárias e sociais que visam promover dignidade, inclusão e esperança para aqueles que mais precisam. Atuamos em diversas frentes, oferecendo assistência alimentar, apoio psicológico, capacitação profissional e acompanhamento social integral.</p>
+            
+            <h3>Nossos Valores</h3>
+            <ul class="valores">
+                <li><strong>Solidariedade:</strong> Compromisso genuíno com o bem-estar do próximo</li>
+                <li><strong>Respeito:</strong> Valorização da dignidade humana em todas as suas formas</li>
+                <li><strong>Transparência:</strong> Gestão ética e prestação de contas com a sociedade</li>
+            </ul>
+        </section>
+
+        <section id="projetos">
+            <h2>Nossos Projetos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Projeto</th>
+                        <th>Público Atendido</th>
+                        <th>Ano de Início</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cesta Básica Solidária</td>
+                        <td>Famílias em vulnerabilidade alimentar</td>
+                        <td>2015</td>
+                        <td><span class="status ativo">Ativo</span></td>
+                    </tr>
+                    <tr>
+                        <td>Capacita Futuro</td>
+                        <td>Jovens e adultos desempregados</td>
+                        <td>2018</td>
+                        <td><span class="status ativo">Ativo</span></td>
+                    </tr>
+                    <tr>
+                        <td>Acolher com Amor</td>
+                        <td>Idosos em situação de abandono</td>
+                        <td>2020</td>
+                        <td><span class="status ativo">Ativo</span></td>
+                    </tr>
+                    <tr>
+                        <td>Natal Solidário</td>
+                        <td>Crianças de comunidades carentes</td>
+                        <td>2016</td>
+                        <td><span class="status concluido">Concluído</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="equipe">
+            <h2>Nossa Equipe</h2>
+            <div class="equipe-grid">
+                <div class="membro">
+                    <img src="/maria.jpg" alt="Maria Silva">
+                    <h3>Maria Silva</h3>
+                    <p class="funcao">Diretora Executiva</p>
+                    <p>Formada em Serviço Social, dedica sua vida à causa humanitária há mais de 15 anos.</p>
+                </div>
+                <div class="membro">
+                    <img src="/joão.jpg" alt="João Santos">
+                    <h3>João Santos</h3>
+                    <p class="funcao">Coordenador de Projetos</p>
+                    <p>Especialista em gestão de projetos sociais e mobilização comunitária.</p>
+                </div>
+                <div class="membro">
+                    <img src="/ana.jpg" alt="Ana Costa">
+                    <h3>Ana Costa</h3>
+                    <p class="funcao">Psicóloga Voluntária</p>
+                    <p>Oferece apoio emocional e acompanhamento psicológico às famílias atendidas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="doe">
+            <h2>Doe Agora</h2>
+            <p class="intro-doacao">Sua contribuição faz a diferença na vida de centenas de famílias. Doe agora e seja parte dessa corrente do bem!</p>
+            
+            <form class="formulario-doacao">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="valor">Valor da Doação (R$):</label>
+                    <input type="number" id="valor" name="valor" min="1" step="0.01" placeholder="50.00" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="metodo">Método de Pagamento:</label>
+                    <select id="metodo" name="metodo" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="pix">Pix</option>
+                        <option value="cartao">Cartão de Crédito</option>
+                        <option value="boleto">Boleto Bancário</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Doação</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Endereço</h3>
+                    <p>Rua da Esperança, 123<br>
+                    Bairro Solidário<br>
+                    São Paulo - SP<br>
+                    CEP: 01234-567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>E-mail: contato@caminhossolidariedade.org.br<br>
+                    Telefone: (11) 1234-5678<br>
+                    WhatsApp: (11) 98765-4321</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Fundação Caminhos da Solidariedade. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

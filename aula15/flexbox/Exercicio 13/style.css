@@ -1,0 +1,20 @@
+ .galeria-responsiva {
+  display: flex;
+  flex-wrap: wrap;              /* permite quebrar linha */
+  justify-content: center;      /* centraliza as imagens */
+  gap: 20px;
+  padding: 20px;
+}
+
+.galeria-responsiva img {
+  width: 250px;                 /* tamanho base */
+  max-width: 100%;              /* se a tela ficar muito pequena */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.galeria-responsiva img:hover {
+  transform: scale(1.05);
+}
+

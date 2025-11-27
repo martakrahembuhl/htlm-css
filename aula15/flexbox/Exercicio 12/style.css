@@ -1,0 +1,14 @@
+.galeria {
+  display: flex;
+  justify-content: center;  /* centraliza horizontalmente */
+  flex-wrap: wrap;          /* permite quebrar linha */
+  gap: 20px;                /* espaço entre as imagens (opcional) */
+  padding: 20px;
+}
+
+.galeria img {
+  width: 200px;             /* tamanho das imagens */
+  height: auto;
+  border-radius: 10px;      /* opcional */
+}
+ 

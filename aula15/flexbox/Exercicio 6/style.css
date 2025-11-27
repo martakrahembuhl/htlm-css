@@ -1,0 +1,104 @@
+.item1{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item2{
+    display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item3{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item4{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item5{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item6{
+    display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item7{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item8{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item9{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item10{
+    display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+
+.item11{
+    display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item12{
+    display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.container1{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    display: flex;
+    gap: 10px;
+}

@@ -1,0 +1,40 @@
+ .item1{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item2{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item3{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.item4{
+     display: flex;   
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    color: white;
+}
+
+.container1{
+    width: 100vw;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: flex;
+    gap: 10px;
+}
